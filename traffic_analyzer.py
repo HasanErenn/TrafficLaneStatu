@@ -59,23 +59,24 @@ class TrafficAnalyzer:
         self.canvas_height = self.frame_height
         
         # Kalibrasyon için parametreler
-        self.calibration_frames = self.fps * 3  # 3 saniyelik kalibrasyon
+        self.calibration_frames = self.fps * 5  # 5 saniyelik kalibrasyon
         self.current_frame = 0
         self.is_calibrated = False
+        self.calibration_vehicles = []  # Kalibrasyon sırasındaki araç pozisyonları
         
         # Şerit tespiti için parametreler
-        self.lane_detection_line_y = int(self.frame_height * 0.3)  # %40'tan %30'a çekildi
+        self.lane_detection_line_y = int(self.frame_height * 0.4)
         self.counting_line_y = int(self.frame_height * 0.7)
         
         # ROI parametreleri
-        self.roi_start_y = int(self.frame_height * 0.2)  # Daha uzaktan başla
+        self.roi_start_y = int(self.frame_height * 0.3)
         self.roi_end_y = self.frame_height
         
         # Şerit bilgileri
-        self.lanes = {}  # {lane_id: {"center_x": x, "direction": angle, "count": 0}}
-        self.lane_width = 100
-        self.min_lanes = 2  # Minimum şerit sayısı (emniyet şeridi hariç)
-        self.max_lanes = 4  # Maximum şerit sayısı (emniyet şeridi hariç)
+        self.lanes = {}
+        self.lane_width = 100  # Başlangıç değeri, kalibrasyon sırasında güncellenecek
+        self.min_lanes = 2
+        self.max_lanes = 4
         
         # Araç takibi için parametreler
         self.vehicle_states = {}
@@ -377,94 +378,214 @@ class TrafficAnalyzer:
         
         return None
 
-    def calibrate_lanes(self):
-        """Şeritleri kalibre et"""
-        if len(self.temp_lanes) < self.min_lanes:
-            return False
+    def detect_lane_lines(self, frame):
+        """Yoldaki beyaz çizgileri tespit et"""
+        # ROI bölgesini al
+        roi = frame[self.roi_start_y:self.roi_end_y, :]
         
-        # Şerit merkezlerini hesapla
+        # Gri tonlamaya çevir
+        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+        
+        # Gürültüyü azalt
+        blur = cv2.GaussianBlur(gray, (5, 5), 0)
+        
+        # Kenarları tespit et
+        edges = cv2.Canny(blur, 50, 150)
+        
+        # Beyaz renk maskesi
+        lower_white = np.array([200])
+        upper_white = np.array([255])
+        white_mask = cv2.inRange(gray, lower_white, upper_white)
+        
+        # Kenarlar ve beyaz maske birleştir
+        combined_mask = cv2.bitwise_and(edges, white_mask)
+        
+        # Hough dönüşümü ile çizgileri bul
+        lines = cv2.HoughLinesP(
+            combined_mask,
+            rho=1,
+            theta=np.pi/180,
+            threshold=50,
+            minLineLength=100,
+            maxLineGap=50
+        )
+        
+        if lines is None:
+            return []
+        
+        # Çizgileri filtrele (dikeye yakın olanları ele)
+        valid_lines = []
+        for line in lines:
+            x1, y1, x2, y2 = line[0]
+            if x2 - x1 == 0:  # Dikey çizgi
+                continue
+            
+            angle = abs(np.arctan2(y2 - y1, x2 - x1) * 180 / np.pi)
+            if 70 < angle < 110:  # Yataya yakın çizgileri ele
+                continue
+                
+            valid_lines.append((x1, y1 + self.roi_start_y, x2, y2 + self.roi_start_y))
+        
+        return valid_lines
+
+    def cluster_lane_lines(self, lines):
+        """Tespit edilen çizgileri şeritlere göre grupla"""
+        if not lines:
+            return []
+            
+        # X koordinatlarını topla
+        x_coords = []
+        for x1, _, x2, _ in lines:
+            x_coords.append((x1 + x2) / 2)
+        
+        # DBSCAN ile gruplama yap
+        clustering = DBSCAN(eps=self.lane_width * 0.7, min_samples=2).fit(np.array(x_coords).reshape(-1, 1))
+        
+        # Her grup için ortalama x koordinatı hesapla
+        clusters = {}
+        for i, label in enumerate(clustering.labels_):
+            if label == -1:  # Gürültü
+                continue
+            if label not in clusters:
+                clusters[label] = []
+            clusters[label].append(x_coords[i])
+        
+        # Ortalama konumları hesapla ve sırala
         lane_centers = []
-        for positions in self.temp_lanes.values():
-            if len(positions) >= 2:  # En az 2 gözlem
-                std_dev = np.std(positions)
-                if std_dev < self.lane_width * 0.3:  # Pozisyon tutarlılığı kontrolü
-                    avg_pos = sum(positions) / len(positions)
-                    lane_centers.append(avg_pos)
+        for points in clusters.values():
+            avg_x = sum(points) / len(points)
+            lane_centers.append(avg_x)
         
-        if len(lane_centers) < self.min_lanes:
+        return sorted(lane_centers)
+
+    def verify_lane_consistency(self, lane_centers):
+        """Şerit pozisyonlarının tutarlılığını kontrol et"""
+        if not lane_centers or len(lane_centers) < 2:
+            return False, []
+            
+        # Şeritler arası mesafeleri kontrol et
+        distances = []
+        for i in range(len(lane_centers) - 1):
+            dist = lane_centers[i+1] - lane_centers[i]
+            distances.append(dist)
+        
+        # Mesafelerin ortalaması ve standart sapması
+        avg_distance = sum(distances) / len(distances)
+        std_distance = np.std(distances)
+        
+        # Mesafe tutarlılığı kontrolü
+        if std_distance > avg_distance * 0.3:  # %30'dan fazla sapma varsa şüpheli
+            return False, []
+            
+        # Minimum ve maksimum mesafe kontrolü
+        min_allowed = self.lane_width * 0.7  # Minimum şerit genişliği
+        max_allowed = self.lane_width * 1.5  # Maksimum şerit genişliği
+        
+        if avg_distance < min_allowed or avg_distance > max_allowed:
+            return False, []
+            
+        return True, lane_centers
+
+    def calibrate_lanes(self):
+        """Araçların yan yana dizilimine göre şeritleri tespit et"""
+        if len(self.calibration_vehicles) < 10:  # En az 10 gözlem olmalı
             return False
+            
+        # Araçları x koordinatına göre grupla
+        vehicle_clusters = defaultdict(list)
         
-        # Şeritleri soldan sağa sırala
-        lane_centers.sort()
+        for vehicles in self.calibration_vehicles:
+            # Her frame'deki araçları x koordinatına göre sırala
+            sorted_vehicles = sorted(vehicles)
+            
+            if len(sorted_vehicles) >= 2:  # En az 2 araç yan yana olmalı
+                # Araçlar arası mesafeleri hesapla
+                for i in range(len(sorted_vehicles) - 1):
+                    distance = sorted_vehicles[i+1] - sorted_vehicles[i]
+                    if distance > 50 and distance < 200:  # Makul mesafe kontrolü
+                        mid_point = (sorted_vehicles[i] + sorted_vehicles[i+1]) / 2
+                        cluster_id = int(mid_point // 50)  # 50 piksellik gruplama
+                        vehicle_clusters[cluster_id].append(distance)
         
-        # Minimum şerit genişliği kontrolü
-        min_lane_width = self.lane_width * 0.7  # %70 tolerans
-        valid_centers = [lane_centers[0]]
-        
-        for i in range(1, len(lane_centers)):
-            if lane_centers[i] - valid_centers[-1] >= min_lane_width:
-                valid_centers.append(lane_centers[i])
-        
-        # Şerit sayısı kontrolü (emniyet şeridi hariç)
-        normal_lanes = len(valid_centers)
-        if normal_lanes > self.max_lanes:
-            # Fazla şeritleri ele
-            valid_centers = valid_centers[:self.max_lanes]
-        elif normal_lanes < self.min_lanes:
+        if not vehicle_clusters:
             return False
+            
+        # Ortalama şerit genişliğini hesapla
+        all_distances = []
+        for distances in vehicle_clusters.values():
+            if len(distances) >= 3:  # Her grup için en az 3 gözlem
+                avg_distance = sum(distances) / len(distances)
+                all_distances.append(avg_distance)
         
-        # Şeritleri yeniden numaralandır
-        self.lanes.clear()
+        if not all_distances:
+            return False
+            
+        # Şerit genişliğini güncelle
+        self.lane_width = sum(all_distances) / len(all_distances)
         
-        # Önce emniyet şeridini kontrol et
-        if valid_centers[0] < self.frame_width * 0.15:  # Sol kenardan %15 içeride
-            self.lanes["0"] = {
-                "center_x": valid_centers[0],
-                "count": 0,
-                "type": "emergency"
-            }
-            valid_centers = valid_centers[1:]  # İlk şeridi emniyet şeridi yap
-        
-        # Normal şeritleri numaralandır
-        for i, center_x in enumerate(valid_centers, 1):
-            self.lanes[str(i)] = {
-                "center_x": center_x,
-                "count": 0,
-                "type": "normal"
-            }
-        
-        # Şerit numaralarında tutarsızlık kontrolü
-        lane_ids = sorted([int(lid) for lid in self.lanes.keys()])
-        for i in range(len(lane_ids)-1):
-            if lane_ids[i+1] - lane_ids[i] > 1:  # Ardışık olmayan şeritler
-                # Şeritleri yeniden kontrol et
-                problematic_lanes = []
-                for lid in self.lanes:
-                    if int(lid) in [lane_ids[i], lane_ids[i+1]]:
-                        problematic_lanes.append((lid, self.lanes[lid]["center_x"]))
+        # Son frame'deki araçları kullanarak şeritleri belirle
+        if self.calibration_vehicles:
+            last_vehicles = sorted(self.calibration_vehicles[-1])
+            
+            if len(last_vehicles) < self.min_lanes:
+                return False
                 
-                # Diğer şeritlerle karşılaştır
-                other_lanes = [(lid, info["center_x"]) for lid, info in self.lanes.items() 
-                             if int(lid) not in [lane_ids[i], lane_ids[i+1]]]
+            # Şeritleri oluştur
+            self.lanes.clear()
+            
+            # İlk aracı referans al
+            first_x = last_vehicles[0]
+            
+            # Emniyet şeridi kontrolü
+            if first_x < self.frame_width * 0.15:  # Sol kenardan %15 içeride
+                self.lanes["0"] = {
+                    "center_x": first_x,
+                    "count": 0,
+                    "type": "emergency"
+                }
+                last_vehicles = last_vehicles[1:]  # İlk aracı atla
+            
+            # Kalan araçları normal şerit olarak işaretle
+            for i, x_pos in enumerate(last_vehicles, 1):
+                if i > self.max_lanes:  # Maksimum şerit sayısı kontrolü
+                    break
+                    
+                self.lanes[str(i)] = {
+                    "center_x": x_pos,
+                    "count": 0,
+                    "type": "normal"
+                }
+            
+            # Debug görüntüsü
+            debug_frame = np.zeros((self.frame_height, self.frame_width, 3), dtype=np.uint8)
+            
+            # Şeritleri çiz
+            for lane_id, lane_info in self.lanes.items():
+                color = (0, 255, 0) if lane_info["type"] == "normal" else (0, 0, 255)
                 
-                if other_lanes:
-                    # En yakın diğer şeridi bul
-                    for prob_id, prob_x in problematic_lanes:
-                        min_dist = float('inf')
-                        closest_id = None
-                        for other_id, other_x in other_lanes:
-                            dist = abs(prob_x - other_x)
-                            if dist < min_dist:
-                                min_dist = dist
-                                closest_id = other_id
-                        
-                        # Şerit numarasını düzelt
-                        if closest_id:
-                            new_id = str(int(closest_id) + 1)
-                            self.lanes[new_id] = self.lanes.pop(prob_id)
-        
-        print(f"{len(self.lanes)} şerit tespit edildi ({sum(1 for l in self.lanes.values() if l['type']=='normal')} normal, {sum(1 for l in self.lanes.values() if l['type']=='emergency')} emniyet şeridi)")
-        return True
+                # Şerit çizgisi
+                cv2.line(debug_frame,
+                        (int(lane_info["center_x"]), 0),
+                        (int(lane_info["center_x"]), self.frame_height),
+                        color, 2)
+                
+                # Şerit etiketi
+                cv2.putText(debug_frame,
+                          f"Lane {lane_id}",
+                          (int(lane_info["center_x"]) - 30, 30),
+                          self.FONT,
+                          self.FONT_SCALES['caption'],
+                          (255, 255, 255),
+                          1)
+            
+            cv2.imshow("Lane Calibration", debug_frame)
+            cv2.waitKey(1)
+            
+            print(f"{len(self.lanes)} şerit tespit edildi ({sum(1 for l in self.lanes.values() if l['type']=='normal')} normal, {sum(1 for l in self.lanes.values() if l['type']=='emergency')} emniyet şeridi)")
+            print(f"Ortalama şerit genişliği: {self.lane_width:.1f} piksel")
+            return True
+            
+        return False
 
     def process_frame(self, frame):
         """Her kareyi işle"""
@@ -475,149 +596,133 @@ class TrafficAnalyzer:
         if self.frame_buffer is not None and self.current_frame % self.skip_frames != 0:
             return self.frame_buffer
         
-        # Kalibrasyon durumunu kontrol et
-        if not self.is_calibrated:
-            if self.current_frame >= self.calibration_frames:
-                self.is_calibrated = self.calibrate_lanes()
-                if not self.is_calibrated:
-                    self.current_frame = 0
-                    self.temp_lanes.clear()
-                    print("Kalibrasyon basarisiz, yeniden baslatiliyor...")
-                else:
-                    print("Kalibrasyon tamamlandi!")
-            else:
-                # Kalibrasyon sırasında çizgileri göster
-                cv2.line(frame, (0, self.lane_detection_line_y),
-                        (frame.shape[1], self.lane_detection_line_y),
-                        self.COLORS['primary'], 2)
-                
-                cv2.putText(frame,
-                          "Kalibrasyon: {}/{}".format(self.current_frame, self.calibration_frames),
-                          (20, 50),
-                          self.FONT,
-                          self.FONT_SCALES['subtitle'],
-                          self.COLORS['text'],
-                          2)
-        
-        # Tespit çizgisini kesikli çiz
-        line_length = 30  # Çizgi uzunluğu
-        gap_length = 20   # Boşluk uzunluğu
-        x = 0
-        while x < frame.shape[1]:
-            start_x = x
-            end_x = min(x + line_length, frame.shape[1])
-            cv2.line(frame, 
-                    (start_x, self.lane_detection_line_y),
-                    (end_x, self.lane_detection_line_y),
-                    self.COLORS['primary'], 1)
-            x = end_x + gap_length
-        
-        # Sayma çizgisini çiz
-        cv2.line(frame, (0, self.counting_line_y),
-                (frame.shape[1], self.counting_line_y),
-                self.COLORS['high_traffic'], 2)
-        
-        cv2.putText(frame,
-                  "Sayma Cizgisi",
-                  (10, self.counting_line_y - 10),
-                  self.FONT,
-                  self.FONT_SCALES['caption'],
-                  self.COLORS['high_traffic'],
-                  1)
-        
         # ROI bölgesini kırp
         roi = frame[self.roi_start_y:self.roi_end_y, :]
         
         # Araç tespiti
-        detections = self.detector(roi, classes=[2, 3, 5, 7], imgsz=320)[0]
-        boxes = detections.boxes.cpu().numpy()
+        results = self.detector(roi, classes=[2, 3, 5, 7], imgsz=320)[0]
         
-        if len(boxes.xyxy) > 0:
-            boxes.xyxy[:, [1, 3]] += self.roi_start_y
-        
-        # Tracker'ı güncelle
-        detections = sv.Detections(
-            xyxy=boxes.xyxy,
-            confidence=boxes.conf,
-            class_id=np.zeros_like(boxes.cls.astype(int)),
-            tracker_id=None
-        )
-        
-        if len(detections) > 0:
-            detections = self.tracker.update_with_detections(detections)
+        if len(results.boxes) > 0:
+            # YOLO sonuçlarını supervision Detections formatına çevir
+            detections = sv.Detections(
+                xyxy=results.boxes.xyxy.cpu().numpy(),
+                confidence=results.boxes.conf.cpu().numpy(),
+                class_id=results.boxes.cls.cpu().numpy().astype(int)
+            )
             
-            # Her aracı işle
-            for i in range(len(detections)):
-                xyxy = detections.xyxy[i]
-                tracker_id = detections.tracker_id[i]
-                
-                # Araç merkezi
-                center_x = int((xyxy[0] + xyxy[2]) / 2)
-                center_y = int((xyxy[1] + xyxy[3]) / 2)
-                current_pos = (center_x, center_y)
-                
-                # Araç geçmişini güncelle
-                if tracker_id not in self.vehicle_states:
-                    self.vehicle_states[tracker_id] = {
-                        "positions": [current_pos],
-                        "lane_id": None,
-                        "counted": False
-                    }
+            # ROI offset'ini ekle
+            if len(detections.xyxy) > 0:
+                detections.xyxy[:, [1, 3]] += self.roi_start_y
+            
+            # Kalibrasyon durumunu kontrol et
+            if not self.is_calibrated:
+                if self.current_frame >= self.calibration_frames:
+                    self.is_calibrated = self.calibrate_lanes()
+                    if not self.is_calibrated:
+                        self.current_frame = 0
+                        self.calibration_vehicles.clear()
+                        print("Kalibrasyon basarisiz, yeniden baslatiliyor...")
+                    else:
+                        print("Kalibrasyon tamamlandi!")
                 else:
-                    self.vehicle_states[tracker_id]["positions"].append(current_pos)
-                
-                # Şerit tespiti
-                if (center_y > self.lane_detection_line_y and
-                    len(self.vehicle_states[tracker_id]["positions"]) >= self.min_track_points):
+                    # Kalibrasyon sırasında araç pozisyonlarını topla
+                    current_vehicles = []
                     
-                    direction = self.calculate_direction(
-                        self.vehicle_states[tracker_id]["positions"]
-                    )
+                    # Tracker'ı güncelle
+                    tracked_detections = self.tracker.update_with_detections(detections)
                     
-                    lane_id = self.assign_lane(center_x, direction)
-                    if lane_id and not self.vehicle_states[tracker_id]["lane_id"]:
-                        self.vehicle_states[tracker_id]["lane_id"] = lane_id
-                
-                # Araç sayımı
-                if (self.is_calibrated and 
-                    self.vehicle_states[tracker_id]["lane_id"] and 
-                    not self.vehicle_states[tracker_id]["counted"] and 
-                    center_y > self.counting_line_y):
+                    for i in range(len(tracked_detections)):
+                        xyxy = tracked_detections.xyxy[i]
+                        center_x = int((xyxy[0] + xyxy[2]) / 2)
+                        current_vehicles.append(center_x)
                     
-                    lane_id = self.vehicle_states[tracker_id]["lane_id"]
-                    self.lanes[lane_id]["count"] += 1
-                    self.vehicle_states[tracker_id]["counted"] = True
+                    if current_vehicles:
+                        self.calibration_vehicles.append(current_vehicles)
                     
-                    # Son 1 dakika sayacını güncelle
-                    self.last_minute_counts[lane_id].append(current_time)
-                    self.last_minute_counts[lane_id] = [t for t in self.last_minute_counts[lane_id]
-                                                      if current_time - t <= 60]
-                
-                # Aracı çiz
-                cv2.rectangle(frame, 
-                            (int(xyxy[0]), int(xyxy[1])),
-                            (int(xyxy[2]), int(xyxy[3])), 
-                            self.COLORS['primary'], 2)
-                
-                # Şerit numarasını yaz
-                if self.is_calibrated and self.vehicle_states[tracker_id]["lane_id"]:
-                    lane_text = "Lane {}".format(self.vehicle_states[tracker_id]["lane_id"])
+                    # Kalibrasyon durumunu göster
                     cv2.putText(frame,
-                              lane_text,
-                              (int(xyxy[0]), int(xyxy[1]) - 5),
+                              f"Kalibrasyon: {self.current_frame}/{self.calibration_frames}",
+                              (20, 50),
                               self.FONT,
-                              self.FONT_SCALES['caption'],
-                              (0, 0, 255),  # Kırmızı renk
-                              1)
+                              self.FONT_SCALES['subtitle'],
+                              self.COLORS['text'],
+                              2)
+            else:
+                # Normal işlem - araçları takip et
+                tracked_detections = self.tracker.update_with_detections(detections)
                 
-                # Hareket vektörünü çiz
-                positions = self.vehicle_states[tracker_id]["positions"]
-                if len(positions) >= 2:
-                    cv2.line(frame,
-                            positions[-2],
-                            positions[-1],
-                            self.COLORS['mid_traffic'],
-                            2)
+                # Her aracı işle
+                for i in range(len(tracked_detections)):
+                    xyxy = tracked_detections.xyxy[i]
+                    tracker_id = tracked_detections.tracker_id[i]
+                    
+                    # Araç merkezi
+                    center_x = int((xyxy[0] + xyxy[2]) / 2)
+                    center_y = int((xyxy[1] + xyxy[3]) / 2)
+                    current_pos = (center_x, center_y)
+                    
+                    # Araç geçmişini güncelle
+                    if tracker_id not in self.vehicle_states:
+                        self.vehicle_states[tracker_id] = {
+                            "positions": [current_pos],
+                            "lane_id": None,
+                            "counted": False
+                        }
+                    else:
+                        self.vehicle_states[tracker_id]["positions"].append(current_pos)
+                    
+                    # Şerit tespiti
+                    if (center_y > self.lane_detection_line_y and
+                        len(self.vehicle_states[tracker_id]["positions"]) >= self.min_track_points):
+                        
+                        direction = self.calculate_direction(
+                            self.vehicle_states[tracker_id]["positions"]
+                        )
+                        
+                        lane_id = self.assign_lane(center_x, direction)
+                        if lane_id and not self.vehicle_states[tracker_id]["lane_id"]:
+                            self.vehicle_states[tracker_id]["lane_id"] = lane_id
+                    
+                    # Araç sayımı
+                    if (self.is_calibrated and 
+                        self.vehicle_states[tracker_id]["lane_id"] and 
+                        not self.vehicle_states[tracker_id]["counted"] and 
+                        center_y > self.counting_line_y):
+                        
+                        lane_id = self.vehicle_states[tracker_id]["lane_id"]
+                        self.lanes[lane_id]["count"] += 1
+                        self.vehicle_states[tracker_id]["counted"] = True
+                        
+                        # Son 1 dakika sayacını güncelle
+                        self.last_minute_counts[lane_id].append(current_time)
+                        self.last_minute_counts[lane_id] = [t for t in self.last_minute_counts[lane_id]
+                                                          if current_time - t <= 60]
+                    
+                    # Aracı çiz
+                    cv2.rectangle(frame, 
+                                (int(xyxy[0]), int(xyxy[1])),
+                                (int(xyxy[2]), int(xyxy[3])), 
+                                self.COLORS['primary'], 2)
+                    
+                    # Şerit numarasını yaz
+                    if self.is_calibrated and self.vehicle_states[tracker_id]["lane_id"]:
+                        lane_text = f"Lane {self.vehicle_states[tracker_id]['lane_id']}"
+                        cv2.putText(frame,
+                                  lane_text,
+                                  (int(xyxy[0]), int(xyxy[1]) - 5),
+                                  self.FONT,
+                                  self.FONT_SCALES['caption'],
+                                  (0, 0, 255),  # Kırmızı renk
+                                  1)
+                    
+                    # Hareket vektörünü çiz
+                    positions = self.vehicle_states[tracker_id]["positions"]
+                    if len(positions) >= 2:
+                        cv2.line(frame,
+                                positions[-2],
+                                positions[-1],
+                                self.COLORS['mid_traffic'],
+                                2)
         
         # Frame buffer'ı güncelle
         self.frame_buffer = frame.copy()
