@@ -1,0 +1,4312 @@
+{
+    "history": [
+        {
+            "timestamp": "2025-05-07T15:13:50.550925",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {}
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:13:53.702497",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:13:56.865061",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:13:59.955392",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:03.033319",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:06.136338",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:09.234360",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:12.495895",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:15.539702",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:18.630298",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:21.729318",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:24.962933",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:28.134408",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:31.404554",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:34.652152",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:37.873470",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:41.088535",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:44.977437",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:48.204415",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:51.398877",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:54.719784",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:14:57.920308",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:30:14.643452",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:47:11.825637",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:47:15.142816",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:27.964401",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:31.264749",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:35.008923",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:39.734518",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:45.944865",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T15:56:52.419132",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:13:15.039924",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:02.572818",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:05.708378",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:09.139613",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:13.143044",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:17.566518",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:21.926582",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:26.245850",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:30.624542",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:35.383313",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:39.756819",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:44.124626",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:48.548969",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:53.132285",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:16:57.571004",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:17:02.472795",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:35:03.579736",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:35:06.716718",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:50:25.766398",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:59:52.113178",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:59:55.302041",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T16:59:59.218388",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:04.249476",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:09.630018",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:14.608390",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:18.986735",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:23.105183",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:26.342657",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:29.480446",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:32.623429",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:35.762093",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:38.893191",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:42.047481",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:45.177950",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:48.327127",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:51.468060",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:54.632974",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:00:57.795355",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:01:00.984294",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:01:04.136486",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:01:07.297203",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:15:52.382298",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:15:55.792680",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:15:59.022013",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:16:02.869832",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:16:07.238512",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:16:11.821121",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:33.346499",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:36.455652",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:39.948746",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:44.058451",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:48.331652",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:52.695576",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:21:57.243443",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:22:01.677096",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:22:06.052376",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:22:10.366090",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:22:14.831087",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:22:18.935258",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:32:21.395822",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:32:24.800249",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:32:29.024430",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        },
+        {
+            "timestamp": "2025-05-07T17:32:33.153731",
+            "lanes": {
+                "0": {
+                    "center_x": 64,
+                    "direction": 0,
+                    "count": 0,
+                    "is_emergency": true
+                },
+                "1": {
+                    "center_x": 315,
+                    "direction": 79.99202019855866,
+                    "count": 51,
+                    "is_emergency": false
+                },
+                "2": {
+                    "center_x": 425,
+                    "direction": 55.175510843043206,
+                    "count": 47,
+                    "is_emergency": false
+                },
+                "3": {
+                    "center_x": 312,
+                    "direction": 95.71059313749964,
+                    "count": 40,
+                    "is_emergency": false
+                }
+            },
+            "class_counts": {
+                "0": {},
+                "1": {
+                    "Araba": 29,
+                    "Kamyon": 21,
+                    "Otobüs": 1
+                },
+                "2": {
+                    "Araba": 41,
+                    "Kamyon": 6
+                },
+                "3": {
+                    "Kamyon": 3,
+                    "Araba": 37
+                }
+            },
+            "total_violations": 0
+        }
+    ],
+    "last_update": "2025-05-07T17:32:33.153938"
+}
