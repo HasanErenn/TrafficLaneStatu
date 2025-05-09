@@ -262,9 +262,13 @@ class TrafficAnalyzer:
             ret, frame = cap.read()
             if not ret:
                 break
+            # Dinamik FPS ayarı: işlem süresine göre bekleme
+            start_time = time.time()
             frame = self.process_frame(frame)
             cv2.imshow("Trafik Analizi", frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
+            elapsed = (time.time() - start_time) * 1000  # ms cinsinden
+            delay = max(int(self.frame_time - elapsed), 1)
+            if cv2.waitKey(delay) & 0xFF == ord('q'):
                 break
         cap.release()
         cv2.destroyAllWindows()
@@ -562,6 +566,21 @@ class TrafficAnalyzer:
             
         return False
 
+    def draw_checkmark(self, frame, x, y):
+        """Özel onay işareti çiz"""
+        # Onay işareti boyutları
+        size = 30
+        thickness = 3
+        
+        # Onay işareti noktaları
+        pt1 = (x, y)
+        pt2 = (x + int(size * 0.3), y + int(size * 0.5))
+        pt3 = (x + size, y - int(size * 0.6))
+        
+        # Onay işaretini çiz
+        cv2.line(frame, pt1, pt2, (0, 0, 255), thickness)
+        cv2.line(frame, pt2, pt3, (0, 0, 255), thickness)
+
     def process_frame(self, frame):
         """Her kareyi işler ve araç yollarını çizer."""
         # Tam frame üzerinde tespit
@@ -604,27 +623,38 @@ class TrafficAnalyzer:
                      (0, self.counting_line_y),
                      (self.frame_width, self.counting_line_y),
                      (255, 0, 0), 2)
+
+            # Her araç için merkez noktayı çiz
+            for lane_id, lane_info in self.lanes.items():
+                cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y), 4, (0, 255, 255), -1)
+
             for tid, cx, x1, y1 in cx_info:
                 positions = self.vehicle_states.get(tid, [])
-                if len(positions) < 2 or tid in self.counted_ids:
-                    continue
-                prev_cy = positions[-2][1]
-                curr_cy = positions[-1][1]
-                # Aşağı doğru crossing_line geçişi
-                if prev_cy < self.counting_line_y <= curr_cy:
-                    lane_id = self.assign_lane(cx, self.calculate_direction(positions))
-                    if lane_id:
-                        self.lanes[lane_id]['count'] += 1
-                        self.last_minute_counts[lane_id].append(time.time())
-                        self.counted_ids.add(tid)
-                        # Etiketi kutunun üstüne yaz
-                        cv2.putText(frame,
-                                    f"Serit {lane_id}",
-                                    (x1, y1 - 5),
-                                    self.FONT,
-                                    self.FONT_SCALES['caption'],
-                                    (0, 255, 0),
-                                    1)
+                lane_id = None  # Her araç için lane_id'yi None olarak başlat
+                
+                if len(positions) >= 2:
+                    prev_cy = positions[-2][1]
+                    curr_cy = positions[-1][1]
+                    
+                    # Aşağı doğru crossing_line geçişi
+                    if prev_cy < self.counting_line_y <= curr_cy:
+                        lane_id = self.assign_lane(cx, self.calculate_direction(positions))
+                        if lane_id is not None:
+                            self.lanes[lane_id]['count'] += 1
+                            self.last_minute_counts[lane_id].append(time.time())
+                            self.counted_ids.add(tid)
+                            
+                            # Etiketi kutunun üstüne yaz
+                            cv2.putText(frame,
+                                      f"Serit {lane_id}",
+                                      (x1, y1 - 40),
+                                      self.FONT,
+                                      self.FONT_SCALES['caption'],
+                                      (0, 255, 0),
+                                      1)
+                            
+                            # Özel onay işaretini çiz
+                            self.draw_checkmark(frame, x1, y1 - 15)
 
         # İzleri çiz
         for pts in self.vehicle_states.values():
@@ -688,6 +718,41 @@ class TrafficAnalyzer:
                 "history": self.stats_history,
                 "last_update": datetime.now().isoformat()
             }, f, ensure_ascii=False, indent=4)
+
+    def detect_lanes_by_vehicle_movement(self, tracked_vehicles):
+        """Araçların hareket doğrultularını ve mesafelerini kullanarak şerit tespiti yap"""
+        # Araçların merkez noktalarını ve doğrultularını topla
+        vehicle_positions = []
+        vehicle_directions = []
+        for vehicle in tracked_vehicles:
+            positions = vehicle['positions']
+            if len(positions) >= 2:
+                # Son iki pozisyonu kullanarak doğrultuyu hesapla
+                direction = self.calculate_direction(positions)
+                if direction is not None:
+                    vehicle_positions.append(positions[-1])  # Son pozisyonu al
+                    vehicle_directions.append(direction)
+
+        # Kümeleme için veri hazırlığı
+        data = np.array([[pos[0], pos[1], dir] for pos, dir in zip(vehicle_positions, vehicle_directions)])
+
+        # DBSCAN ile kümeleme yap
+        clustering = DBSCAN(eps=50, min_samples=2).fit(data)
+        labels = clustering.labels_
+
+        # Şerit merkezlerini hesapla
+        lane_centers = defaultdict(list)
+        for label, pos in zip(labels, vehicle_positions):
+            if label != -1:  # Gürültü noktaları hariç
+                lane_centers[label].append(pos[0])  # X koordinatını ekle
+
+        # Her kümenin merkezini hesapla
+        self.lanes.clear()
+        for label, x_coords in lane_centers.items():
+            center_x = np.mean(x_coords)
+            self.lanes[str(label)] = {"center_x": center_x, "count": 0, "type": "normal"}
+
+        print(f"{len(self.lanes)} şerit tespit edildi.")
 
 if __name__ == "__main__":
     analyzer = TrafficAnalyzer("test.mp4")
