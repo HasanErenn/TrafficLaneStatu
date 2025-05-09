@@ -96,6 +96,9 @@ class TrafficAnalyzer:
         # Performans optimizasyonu için buffer
         self.frame_buffer = None
         self.skip_frames = 2
+        
+        # Sayılan araçların bilgilerini tutmak için yeni değişken
+        self.counted_vehicles = {}  # {tid: {'lane_id': lane_id, 'last_pos': (x1, y1)}}
 
     def draw_card(self, panel, title, content_func, x, y, width, height):
         """Modern kart çiz"""
@@ -605,8 +608,13 @@ class TrafficAnalyzer:
         )
         tracked = self.tracker.update_with_detections(detections)
 
-        # Araç kutularını çiz
-        for xyxy in tracked.xyxy:
+        # Mevcut frame'deki araç ID'lerini topla
+        current_vehicle_ids = set()
+
+        # Araç kutularını çiz ve mevcut araçları işaretle
+        for i, xyxy in enumerate(tracked.xyxy):
+            tid = tracked.tracker_id[i]
+            current_vehicle_ids.add(tid)
             x1, y1, x2, y2 = map(int, xyxy)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
@@ -619,6 +627,15 @@ class TrafficAnalyzer:
             cy = int((y1 + y2) / 2)
             self.vehicle_states.setdefault(tid, []).append((cx, cy))
             cx_info.append((tid, cx, x1, y1))
+            
+            # Eğer bu araç daha önce sayıldıysa, bilgilerini güncelle
+            if tid in self.counted_vehicles:
+                self.counted_vehicles[tid]['last_pos'] = (x1, y1)
+
+        # Görüntüden çıkan araçları temizle
+        for tid in list(self.counted_vehicles.keys()):
+            if tid not in current_vehicle_ids:
+                del self.counted_vehicles[tid]
 
         # Kalibrasyon
         self.current_frame += 1
@@ -641,7 +658,6 @@ class TrafficAnalyzer:
 
             # Her araç için merkez noktayı çiz
             for lane_id, lane_info in self.lanes.items():
-                # Sadece 1, 2 ve 3 numaralı şeritleri göster
                 if int(lane_id) <= 3:
                     cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y1), 4, (0, 255, 255), -1)
                     cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y2), 4, (0, 255, 255), -1)
@@ -661,28 +677,32 @@ class TrafficAnalyzer:
                     # Herhangi bir çizgiden geçtiyse ve daha önce sayılmadıysa
                     if (crossed_line1 or crossed_line2) and tid not in self.counted_ids:
                         lane_id = self.assign_lane(cx, self.calculate_direction(positions))
-                        if lane_id is not None and int(lane_id) <= 3:  # Sadece 1, 2 ve 3 numaralı şeritleri say
+                        if lane_id is not None and int(lane_id) <= 3:
                             self.lanes[lane_id]['count'] += 1
                             self.last_minute_counts[lane_id].append(time.time())
                             self.counted_ids.add(tid)
-                            
-                            # Etiketi kutunun üstüne yaz
-                            cv2.putText(frame,
-                                      f"Serit {lane_id}",
-                                      (x1, y1 - 40),
-                                      self.FONT,
-                                      self.FONT_SCALES['caption'],
-                                      (0, 255, 0),
-                                      1)
-                            
-                            # Özel onay işaretini çiz
-                            self.draw_checkmark(frame, x1, y1 - 15)
+                            # Araç bilgilerini kaydet
+                            self.counted_vehicles[tid] = {
+                                'lane_id': lane_id,
+                                'last_pos': (x1, y1)
+                            }
 
-        # İzleri sadece arka planda takip et, UI'da gösterme
-        # for pts in self.vehicle_states.values():
-        #     if len(pts) > 1:
-        #         for j in range(1, len(pts)):
-        #             cv2.line(frame, pts[j-1], pts[j], self.COLORS['primary'], 2)
+            # Sayılan tüm araçlar için işaretleri göster
+            for tid, info in self.counted_vehicles.items():
+                x1, y1 = info['last_pos']
+                lane_id = info['lane_id']
+                
+                # Etiketi kutunun üstüne yaz
+                cv2.putText(frame,
+                          f"Serit {lane_id}",
+                          (x1, y1 - 40),
+                          self.FONT,
+                          self.FONT_SCALES['caption'],
+                          (0, 255, 0),
+                          1)
+                
+                # Özel onay işaretini çiz
+                self.draw_checkmark(frame, x1, y1 - 15)
 
         # Sağ paneli ekleyip tek bir görüntü oluştur
         panel = self.create_stats_panel()
