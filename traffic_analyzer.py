@@ -68,7 +68,8 @@ class TrafficAnalyzer:
         
         # Şerit tespiti için parametreler
         self.lane_detection_line_y = int(self.frame_height * 0.4)
-        self.counting_line_y = int(self.frame_height * 0.7)
+        self.counting_line_y1 = int(self.frame_height * 0.55)  # İlk çizgi yukarı taşındı (0.65 -> 0.55)
+        self.counting_line_y2 = int(self.frame_height * 0.85)  # İkinci çizgi aşağı taşındı (0.75 -> 0.85)
         
         # ROI parametreleri
         self.roi_start_y = int(self.frame_height * 0.3)
@@ -78,7 +79,7 @@ class TrafficAnalyzer:
         self.lanes = {}
         self.lane_width = 100  # Başlangıç değeri, kalibrasyon sırasında güncellenecek
         self.min_lanes = 2
-        self.max_lanes = 4
+        self.max_lanes = 3  # Maksimum şerit sayısı 4'ten 3'e düşürüldü
         
         # Araç takibi için parametreler
         self.vehicle_states = {}
@@ -258,18 +259,24 @@ class TrafficAnalyzer:
 
     def analyze_traffic(self):
         cap = cv2.VideoCapture(self.source)
+        
+        # Video bitene kadar devam et
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
                 break
-            # Dinamik FPS ayarı: işlem süresine göre bekleme
-            start_time = time.time()
+            
+            # Frame'i işle
             frame = self.process_frame(frame)
+            
+            # Görüntüyü göster
             cv2.imshow("Trafik Analizi", frame)
-            elapsed = (time.time() - start_time) * 1000  # ms cinsinden
-            delay = max(int(self.frame_time - elapsed), 1)
-            if cv2.waitKey(delay) & 0xFF == ord('q'):
+            
+            # 1ms bekle ve q tuşuna basılırsa çık
+            if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
+            
+        # Kaynakları serbest bırak
         cap.release()
         cv2.destroyAllWindows()
 
@@ -310,8 +317,14 @@ class TrafficAnalyzer:
         # Mevcut şeritleri kontrol et ve en yakın iki şeridi bul
         closest_lanes = []
         for lane_id, lane_info in self.lanes.items():
+            # Sadece 1, 2 ve 3 numaralı şeritleri kontrol et
+            if int(lane_id) > 3:
+                continue
             distance = abs(lane_info["center_x"] - x_pos)
             closest_lanes.append((lane_id, distance))
+        
+        if not closest_lanes:  # Eğer uygun şerit bulunamazsa
+            return None
         
         # Mesafeye göre sırala
         closest_lanes.sort(key=lambda x: x[1])
@@ -597,7 +610,7 @@ class TrafficAnalyzer:
             x1, y1, x2, y2 = map(int, xyxy)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
-        # İz pozisyonlarını güncelle ve X pozisyonlarını topla (bounding box koordinatları ile)
+        # İz pozisyonlarını güncelle ve X pozisyonlarını topla
         cx_info = []
         for i, xyxy in enumerate(tracked.xyxy):
             tid = tracked.tracker_id[i]
@@ -610,36 +623,45 @@ class TrafficAnalyzer:
         # Kalibrasyon
         self.current_frame += 1
         if not self.is_calibrated:
-            # Her frame'deki araç X pozisyonlarını kaydet
             self.calibration_vehicles.append([cx for _, cx, _, _ in cx_info])
-            # Kalibrasyon tamamlandığında şeritleri belirle
             if self.current_frame >= self.calibration_frames and self.calibrate_lanes():
                 self.is_calibrated = True
 
-        # Şerit atama ve sayım (sadece çizgiden geçen araçlar sayılır)
+        # Şerit atama ve sayım
         if self.is_calibrated:
-            # Geçiş çizgisini çiz
+            # İki geçiş çizgisini çiz
             cv2.line(frame,
-                     (0, self.counting_line_y),
-                     (self.frame_width, self.counting_line_y),
+                     (0, self.counting_line_y1),
+                     (self.frame_width, self.counting_line_y1),
+                     (255, 0, 0), 2)
+            cv2.line(frame,
+                     (0, self.counting_line_y2),
+                     (self.frame_width, self.counting_line_y2),
                      (255, 0, 0), 2)
 
             # Her araç için merkez noktayı çiz
             for lane_id, lane_info in self.lanes.items():
-                cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y), 4, (0, 255, 255), -1)
+                # Sadece 1, 2 ve 3 numaralı şeritleri göster
+                if int(lane_id) <= 3:
+                    cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y1), 4, (0, 255, 255), -1)
+                    cv2.circle(frame, (int(lane_info["center_x"]), self.counting_line_y2), 4, (0, 255, 255), -1)
 
             for tid, cx, x1, y1 in cx_info:
                 positions = self.vehicle_states.get(tid, [])
-                lane_id = None  # Her araç için lane_id'yi None olarak başlat
+                lane_id = None
                 
                 if len(positions) >= 2:
                     prev_cy = positions[-2][1]
                     curr_cy = positions[-1][1]
                     
-                    # Aşağı doğru crossing_line geçişi
-                    if prev_cy < self.counting_line_y <= curr_cy:
+                    # Her iki çizgiden geçişi kontrol et
+                    crossed_line1 = prev_cy < self.counting_line_y1 <= curr_cy
+                    crossed_line2 = prev_cy < self.counting_line_y2 <= curr_cy
+                    
+                    # Herhangi bir çizgiden geçtiyse ve daha önce sayılmadıysa
+                    if (crossed_line1 or crossed_line2) and tid not in self.counted_ids:
                         lane_id = self.assign_lane(cx, self.calculate_direction(positions))
-                        if lane_id is not None:
+                        if lane_id is not None and int(lane_id) <= 3:  # Sadece 1, 2 ve 3 numaralı şeritleri say
                             self.lanes[lane_id]['count'] += 1
                             self.last_minute_counts[lane_id].append(time.time())
                             self.counted_ids.add(tid)
@@ -656,11 +678,11 @@ class TrafficAnalyzer:
                             # Özel onay işaretini çiz
                             self.draw_checkmark(frame, x1, y1 - 15)
 
-        # İzleri çiz
-        for pts in self.vehicle_states.values():
-            if len(pts) > 1:
-                for j in range(1, len(pts)):
-                    cv2.line(frame, pts[j-1], pts[j], self.COLORS['primary'], 2)
+        # İzleri sadece arka planda takip et, UI'da gösterme
+        # for pts in self.vehicle_states.values():
+        #     if len(pts) > 1:
+        #         for j in range(1, len(pts)):
+        #             cv2.line(frame, pts[j-1], pts[j], self.COLORS['primary'], 2)
 
         # Sağ paneli ekleyip tek bir görüntü oluştur
         panel = self.create_stats_panel()
